@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adote Aqui!</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Cousine:ital@0;1&family=Patrick+Hand&family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Cousine:ital@0;1&family=Patrick+Hand&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    header {
+        background: url(pataheart.png) rgb(247, 232, 97);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        height: 15vh;
+
+
+
+    }
+
+    .logo {
+        display: flex;
+        background: white;
+        padding: 15px 0;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        border-radius: 50px;
+    }
+
+    .logo:hover {
+        width: 230px;
+    }
+
+    .logo img {
+        width: 60px;
+
+    }
+
+    .logo h1 {
+        display: flex;
+        align-items: center;
+        font-size: 27px;
+        font-family: 'Patrick Hand', cursive;
+
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-menu {
+        display: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu div {
+        width: 30px;
+        height: 4px;
+        background: white;
+        margin: 7px;
+
+    }
+
+
+    #icon {
+        align-self: baseline;
+        width: 30px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+
+    .nav_link li {
+        display: inline-block;
+        padding: 0 10px;
+        border-radius: 20px;
+        
+    }
+
+    .nav_link a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-family: "Cousine", monospace;
+        font-weight: 700;
+    
+        
+    }
+
+    .nav_link a:hover {
+        color: darkgrey;
+    }
+
+    li button {
+        padding: 15px 15px;
+        background: orange;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-family: "Cousine", monospace;
+        font-size: 17px;
+    }
+
+    li button:hover {
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+
+    .texto1 {
+        padding-top: 20px;
+        font-family: "Courgette", cursive;
+        margin-bottom: 70px;
+    }
+
+    .texto1 h2 {
+        padding: 20px;
+        font-size: 40px;
+        font-family: "Courgette", cursive;
+        display: flex;
+        justify-content: center;
+    }
+
+    .texto1 p {
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .coluna {
+        display: flex;
+        margin-bottom: 40px;
+
+
+    }
+
+    .card {
+        margin: 30px;
+        width: auto;
+        height:100%;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0px 2px 18px rgba(245, 215, 82, 0.89);
+
+
+    }
+
+    .topCard {
+        padding: 5px;
+        padding-top: 20px;
+        display: flex;
+        align-self: flex-start;
+    }
+
+    .topCard img {
+        width: 50px;
+    }
+
+    .secondText {
+        padding-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .foto1 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro1.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto2 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro2.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto3 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro5.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto4 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro4.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto5 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro6.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto6 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro7.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto7 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro8.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto8 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro9.jpeg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto9 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro10.jpeg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto10 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro11.jpeg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto11 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Gato1.jpeg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto12 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Gato2.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto13 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro7.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto14 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro2.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto15 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro3.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .foto16 {
+        background: url(../AdoteAqui/Cães\ e\ Gatos/Cachorro6.jpg) center/cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .bottomCard {
+        height: 30%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+    }
+
+    .descrip {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .actionsCard {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        
+    }
+
+    .actions {
+        background: rgb(247, 232, 97);
+        border: none;
+        border-radius: 20px;
+        color: black;
+        font-size: 14px;
+        margin-top: 10px;
+        height: 28px;
+        width: 40%;
+        
+
+    }
+
+    .actions:hover {
+        font-size: 16px;
+        color: gray;
+    }
+    footer{
+        text-align: center;
+        background: rgb(247, 232, 97);
+        padding: 20px 0;
+               
+    }
+
+    @media (max-width: 750px) {
+
+        .nav_link {
+            position: absolute;
+            top: 8vh;
+            right: 0;
+            width: 0vw;
+            height: 9vh;
+            background: rgb(247, 232, 97);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            transform: translateX(100%);
+
+        }
+
+        .nav_link li {
+            margin-left: 0;
+            opacity: 0;
+        }
+
+        .mobile-menu {
+            display: block;
+        }
+
+        .nav_link.active {
+            transform: translateX(0);
+        }
+    }
+    @media (max-width: 1050px) {
+        .coluna{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content {
+            width: 50%;
+            padding: 20px;
+        }
+    }
+    @media (max-width: 500px) {
+        .coluna {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .content{
+            align-items: center;
+            width: 80%;
+            padding: 20px;
+        }
+    }
+    
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <!-- Ícones feitos por <a href="https://www.flaticon.com/br/autores/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a> -->
+            <!--Icons made by <a href="https://www.flaticon.com/authors/icongeekcaixa6" title="Icongeekcaixa6">Icongeekcaixa6</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com -->
+            <img src="./cachorro.png"
+                alt="a logo é um cachorrinho com a língua pra fora, cor marrom e bandana rosa no pescoço">
+
+            <h1> AdoteAqui </h1><img id="icon" src="./patas-de-dois-caes.png">
+
+        </div>
+        <nav>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"> </div>
+
+            </div>
+            <ul class="nav_link">
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Fotos</a></li>
+                <li> <a href="#"><button>&#128233;Contato</button></a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <div class="texto1">
+
+        <h2>Conheça nossos bichinhos</h2>
+        <p>Adote um cãozinho e ganhe um melhor amigo &#9825</p>
+    </div>
+
+    <main>
+
+        <div class="coluna">
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Pipoca</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+
+                    <div class="foto1"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Sou calminha, gosto muito de carinho e sonecas</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Mel</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+
+                    <div class="foto2"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Sou muito brincalhona, gosto de correr e de comer</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Theobaldo</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto3"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Adoro ver a rua, latir pra todo mundo e de carinho na barriga</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Rony</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto4"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Pareço metido. mas não posso ver uma bolinha</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coluna">
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto5"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto6"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto7"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto8"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coluna">
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto9"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto10"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto11"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto12"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coluna">
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto13"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto14"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto15"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="topCard">
+                        <img src="https://selfprotecaoveicular.com.br/wp-content/uploads/2021/01/led-alert.gif">
+                        <h2 class="nome">Nome</h2>
+                    </div>
+                    <p class="secondText"> Raça, idade</p>
+                    <div class="foto16"></div>
+                    <div class="bottomCard">
+                        <p class="descrip">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                        <div class="actionsCard">
+                            <button class="actions">Conhecer</button>
+                            <button class="actions">Adotar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p class="copyright">&copy; Todos os direitos reservados - AdoteAqui  2021 </p>
+    </footer>
+
+
+</body>
+
+</html>
